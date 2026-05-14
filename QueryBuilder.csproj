@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Title>Query Builder</Title>
+    <Authors>Sophaneth Sy</Authors>
+    <Description>A package that helps you build your own query that can easily filters and flexible</Description>
+  </PropertyGroup>
+
+</Project>
