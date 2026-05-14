@@ -8,6 +8,37 @@
     <Title>Query Builder</Title>
     <Authors>Sophaneth Sy</Authors>
     <Description>A package that helps you build your own query that can easily filters and flexible</Description>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+    <RepositoryUrl>https://github.com/Netnet78/QueryBuilder</RepositoryUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageProjectUrl>https://github.com/Netnet78/QueryBuilder</PackageProjectUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>query;linq;filtering</PackageTags>
+    <PackageIcon>QueryBuilder.png</PackageIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\QueryBuilder.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Images\QueryBuilder.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="LICENSE.txt">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Update="README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
 </Project>
