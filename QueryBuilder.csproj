@@ -16,6 +16,7 @@
     <RepositoryType>git</RepositoryType>
     <PackageTags>query;linq;filtering</PackageTags>
     <PackageIcon>QueryBuilder.png</PackageIcon>
+    <PackageId>NethQueryBuilder</PackageId>
   </PropertyGroup>
 
   <ItemGroup>
