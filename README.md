@@ -1,6 +1,6 @@
-# QueryBuilder
+# NethQueryBuilder
 
-QueryBuilder is a lightweight, flexible C# library designed to help developers construct complex, advanced server-side queries with ease. By providing a fluent API and robust expression building, it allows for dynamic filtering, sorting, and paging that translates directly to server-side execution (e.g., SQL via Entity Framework).
+NethQueryBuilder is a lightweight, flexible C# library designed to help developers construct complex, advanced server-side queries with ease. By providing a fluent API and robust expression building, it allows for dynamic filtering, sorting, and paging that translates directly to server-side execution (e.g., SQL via Entity Framework).
 
 ## Features
 
@@ -13,7 +13,7 @@ QueryBuilder is a lightweight, flexible C# library designed to help developers c
 
 ## Installation
 
-Install QueryBuilder via NuGet:
+Install NethQueryBuilder via NuGet:
 
 ```bash
-dotnet add package QueryBuilder
+dotnet add package NethQueryBuilder
