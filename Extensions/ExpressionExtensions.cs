@@ -44,16 +44,38 @@ namespace QueryBuilder.Extensions
             return expr1.And(Expression.Lambda<Func<T, bool>>(body!, param));
         }
 
-        public static IQueryable<T> FilterByDynamic<T>(this IQueryable<T> query, IEnumerable<FilterKey<T>> filterKeys)
+        // Filter by FilterKey<T> (type-safe lambdas)
+        public static IQueryable<T> FilterDynamic<T>(
+            this IQueryable<T> query,
+            IEnumerable<FilterKey<T>> filterKeys)
         {
-            if (!filterKeys.Any())
+            if (filterKeys == null || !filterKeys.Any())
                 return query;
+            Expression<Func<T, bool>> predicate = x => true;
+            predicate = predicate.And(filterKeys);
+            return query.Where(predicate);
+        }
 
-            ParameterExpression param = Expression.Parameter(typeof(T));
-            foreach (FilterKey<T> filterKey in filterKeys)
-            {
-                query = query.Provider.CreateQuery<T>()
-            }
+        // Filter by Filter (dynamic strings from JSON/API)
+        public static IQueryable<T> FilterDynamic<T>(
+            this IQueryable<T> query,
+            IEnumerable<Filter> filters)
+        {
+            if (filters == null || !filters.Any())
+                return query;
+            IEnumerable<FilterKey<T>> keys = filters.Select(FilterKey<T>.FromFilter);
+            return query.FilterDynamic(keys);
+        }
+
+        // Sort by SortOrder (dynamic strings from JSON/API)
+        public static IQueryable<T> OrderByDynamic<T>(
+            this IQueryable<T> query,
+            IEnumerable<SortOrder> sortOrders)
+        {
+            if (sortOrders == null || !sortOrders.Any())
+                return query;
+            var keys = sortOrders.Select(SortKey<T>.FromSortOrder);
+            return query.OrderByDynamic(keys);
         }
 
         public static IQueryable<T> OrderByDynamic<T>(
